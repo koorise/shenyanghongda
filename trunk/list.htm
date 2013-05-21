@@ -66,27 +66,35 @@
         <div class="column bestweb clearfix">
 			
 			<div class="mod about_us">
-				<div class="hd"><h2 class="title">公司简介</h2></div>
+				<div class="hd"><h2 class="title">{dede:field name='position'/}</h2></div>
+				{dede:list pagesize='5' }
 				<div class="bd">
-					<div class="pic"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/2page_img1.jpg" alt="" /></a></div>
+					<div class="pic"> [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview'><img src='{@me['litpic']}'/></a>"); [/field:array]</div>
 					<div class="info">
 						<div class="details">
-                            <h3><a href="#">沈阳洪大管道输送设备有限责任公司</a></h3>
-                            <p> {dede:field.content/}</p>
+                            <h3> <a href="[field:arcurl/]" class="title">[field:title/]</a></h3>
+                            <p style='color:whitesmoke;'> [field:description/]...</p>
                         </div>
                      	 
                      </div>
 				</div>
+				{/dede:list}
 			</div>
-        </div>
+				<div class="dede_pages">
+				   <ul class="pagelist">
+					{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+				   </ul>
+				  </div>
+		</div>
            
         
 		<!--产品介绍-->
 		<div class="index_cate aboutus_cate">
 			<ul class="clearfix">
 				<li>
-					<h2><a href="#">我们提供的</a></h2>
+					<h2><a href="#">我们提供的...</a></h2>
 					<div class="offer">
+
                     	<p><a href="#">微阻缓闭止回阀</a></p>
                     	<p><a href="#">插板式干灰阀</a></p>
                     	<p><a href="#">直通液体过滤器</a></p>
@@ -104,13 +112,13 @@
 				</li>
 				<li>
 					<h2><a href="#">关于我们</a></h2>
-                    <div class="pic"><img alt="" src="images/2page_img2.jpg" /></div>
+                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img2.jpg" /></div>
 					<p><em>沈阳洪大管道输送设备有限责任公司</em>成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，</p>
 					<div class="clearfix"><a href="#" class="more">更多&gt;&gt;</a></div>
 				</li>
 				<li>
 					<h2><a href="#">为什么选择我们</a></h2>
-                    <div class="pic"><img alt="" src="images/2page_img3.jpg" /></div>
+                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img3.jpg" /></div>
 					<p><em>沈阳洪大管道输送设备</em>有限责任公司成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，</p>
 					<div class="clearfix"><a href="#" class="more">更多&gt;&gt;</a></div>
 				</li>
