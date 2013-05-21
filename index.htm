@@ -1,272 +1,120 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <title>{dede:global.cfg_webname/}</title>
 <meta name="description" content="{dede:global.cfg_description/}" />
 <meta name="keywords" content="{dede:global.cfg_keywords/}" />
-<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmspath/}/images/js/j.js" ></script>
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/pic_scroll.js"></script>
-<script language="javascript" type="text/javascript">
-<!--
-	$(function(){
-		$("a[_for]").mouseover(function(){
-			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
-			$(this).addClass("thisclass").blur();
-			$("#"+$(this).attr("_for")).show();
-		});
-		$("a[_for=uc_member]").mouseover();
-		$("a[_for=flink_1]").mouseover();
-	});
-	
-	function CheckLogin(){
-	  var taget_obj = document.getElementById('_userlogin');
-	  myajax = new DedeAjax(taget_obj,false,false,'','','');
-	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
-	  DedeXHTTP = null;
-	}
--->
-</script>
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/css/all.css" />
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.js"></script>
 </head>
-<body class="index">
-{dede:include filename="head.htm"/}
-<!-- /header -->
-<div class="w960 center clear mt1">
- <div class="pleft">
-  <div class="bignews">
-   <!--头条-->
-   <div class="onenews"> {dede:arclist flag='h' limit='0,1' infolen='230'}
-    <h2><a href="[field:arcurl/]">[field:title/]</a></h2>
-    <p>[field:info/]...<a href="[field:arcurl/]">[查看全文]</a></p>
-    {/dede:arclist} </div>
-   <!-- /onenews -->
-   <div class="d1"> {dede:arclist flag='h' limit='1,4'}
-    <div class='d1arc'><a href="[field:arcurl/]">[field:title/]</a></div>
-    {/dede:arclist} </div>
-   <!--/头条-->
-   <div class='newarticle'>最新文章</div>
-   <ul class="c2 ico1">
-    <!--最新文档-->
-    {dede:arclist row=14 titlelen=32 noflag='h'}
-    <li><a href="[field:arcurl/]">[field:title/]</a></li>
-    {/dede:arclist}
-    <!--//最新文档-->
-   </ul>
-  </div>
-  <!-- /bignews -->
-  <div class="flashnews">
-   <!-- size: 280px * 192px -->
-   <script language='javascript'>
-linkarr = new Array();
-picarr = new Array();
-textarr = new Array();
-var swf_width=280;
-var swf_height=192;
-//文字颜色|文字位置|文字背景颜色|文字背景透明度|按键文字颜色|按键默认颜色|按键当前颜色|自动播放时间|图片过渡效果|是否显示按钮|打开方式
-var configtg='0xffffff|0|0x3FA61F|5|0xffffff|0xC5DDBC|0x000033|2|3|1|_blank';
-var files = "";
-var links = "";
-var texts = "";
-//这里设置调用标记
-{dede:arclist flag='f' row='5'}
-linkarr[[field:global.autoindex/]] = "[field:arcurl/]";
-picarr[[field:global.autoindex/]]  = "[field:litpic/]";
-textarr[[field:global.autoindex/]] = "[field:title function='html2text(@me)'/]";
-{/dede:arclist}
-for(i=1;i<picarr.length;i++){
-if(files=="") files = picarr[i];
-else files += "|"+picarr[i];
-}
-for(i=1;i<linkarr.length;i++){
-if(links=="") links = linkarr[i];
-else links += "|"+linkarr[i];
-}
-for(i=1;i<textarr.length;i++){
-if(texts=="") texts = textarr[i];
-else texts += "|"+textarr[i];
-}
-document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
-document.write('<param name="movie" value="{dede:global.cfg_templeturl /}/default/images/bcastr3.swf"><param name="quality" value="high">');
-document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
-document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'">');
-document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr3.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'&menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'); document.write('</object>');
-</script>
-  </div>
-  <!-- /flashnews -->
-  <div class="latestnews">
-   <dl class="tbox light">
-    <dt class="light"><strong>特别推荐</strong></dt>
-    <dd class="light">
-     <ul class="d2 ico2">
-      {dede:arclist flag='a' row='6' orderby='pubdate'}
-      <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /latestnews -->
-  <div class="picnews">
-   <dl class="tbox light">
-    <dt class='light'><strong>图文资讯</strong></dt>
-    <dd class='light'>
-     <div class="infiniteCarousel">
-      <div class="wrapper">
-       <ul id='imgscroll'>
-        {dede:arclist row=10 orderby=pubdate type='image.' imgwidth='143' imgheight='106'}
-        <li><a href="[field:arcurl/]">[field:image/]<span class="title">[field:title/]</span></a></li>
-        {/dede:arclist}
-       </ul>
-      </div>
-     </div>
-    </dd>
-   </dl>
-  </div>
-  <div id="leftAD1" style="margin:10px auto">{dede:myad name='indexLeftBanner'/}</div>
-  <!-- /picnews -->
-  <div class="listbox"> {dede:channelartlist}
-   <dl class="tbox">
-    <dt><strong><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></strong><span class="more"><a href="{dede:field name='typeurl'/}">更多...</a></span></dt>
-    <dd>
-     <ul class="d1 ico3">
-      {dede:arclist titlelen='60' row='8'}
-      <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-   {/dede:channelartlist} </div>
-  <!-- /listbox -->
- </div>
- <!-- /pleft -->
- <div class="pright">
-  <div class="usercenter">
-   <dl class="tbox light">
-    <dt class='light'> <strong>互动中心</strong> <span class="label"> <a href="#" _for="uc_digg">踩踩</a> <a href="#" _for="uc_comment">评论</a> <a href="#" _for="uc_member">会员</a> </span> </dt>
-    <dd id="loading"> 正在载入,请稍候... </dd>
-    <dd id="uc_digg">
-     <ul class="f1">
-      {dede:arclist orderby='scores' row='8' subday='30' titlelen='42'}
-      <li> <a href="[field:arcurl/]">[field:title/]</a> <span><small>点击:</small>[field:click/]</span> <span><small>评价:</small>[field:scores/]</span></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-    <!-- /uc_digg -->
-    <dd id="uc_comment">
-     <ul class="f2">
-      {dede:feedback row='5' titlelen='24' infolen='80'}
-      <li> <small><a href="#" class="username">[field:username function="(@me=='guest' ? '游客' : @me)"/]</a> 评论 <a href="[field:global.cfg_phpurl/]/feedback.php?aid=[field:aid/]" class="title">[field:title/]</a></small>
-       <p>[field:msg/]</p>
-      </li>
-      {/dede:feedback}
-     </ul>
-    </dd>
-    <!-- /uc_comment -->
-    <dd id="uc_member" >
-     <div id="_userlogin">
-      <div class="userlogin">
-       <form name="userlogin" action="{dede:global.cfg_memberurl/}/index_do.php" method="POST">
-        <input type="hidden" name="fmdo" value="login" />
-        <input type="hidden" name="dopost" value="login" />
-        <input type="hidden" name="keeptime" value="604800" />
-        <div class="fb"><span>用户名:</span>
-         <input type="text" name="userid" size="20" class="ipt-txt" />
-        </div>
-        <div class="fb"><span>密码:</span>
-         <input type="password" name="pwd" size="20" class="ipt-txt" />
-        </div>
-        {dede:php}
-        if(preg_match("#2#", $safe_gdopen))
-        {
-        echo '
-        <div class="fb"><span>验证码:</span>
-         <input type="text" name="vdcode" size="8" class="ipt-txt" />
-         <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+\'?\'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="'.$cfg_cmspath.'/include/vdimgck.php"/></div>
-        ';
-        }
-        {/dede:php}
-        <div class="submit">
-         <button type="submit" class="btn-1">登录</button>
-         <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="{dede:global.cfg_memberurl/}/resetpassword.php">忘记密码?</a> </div>
-       </form>
-      </div>
-     </div>
-     <!-- /userlogin -->
-     <script language="javascript" type="text/javascript">CheckLogin();</script>
-     <div class="latestlogin"> <strong>最近登陆的会员</strong>
-      <ul class="e7">
-       {dede:memberlist row=6 signlen=30}
-       <li><a href="[field:spaceurl/]" target="_blank"><img src="[field:face/]" alt='[field:spacename/]' width="52" height="52" />[field:uname/]</a></li>
-       {/dede:memberlist}
-      </ul>
-     </div>
-     <!-- /latestlogin -->
-    </dd>
-    <!-- /uc_member -->
-   </dl>
-  </div>
-  <!-- /usercenter -->
-  <div id="rightAD1" style="margin:10px auto">{dede:myad name='indexRightLitpic1'/}</div>
-  <div class="commend mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>推荐内容</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist flag='c' titlelen=42 row='16' tagid='dedecms' pagesize='8'}
-      <li class='dotline'><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /commend -->
-  <div id="rightAD1" style="margin:10px auto">{dede:myad name='indexRightLitpic2'/}</div>
-  <div class="hot mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>本月热点</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist sort='hot' subday='30' titlelen=42 row=6}
-      <li class='dotline'><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <div class="vote mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>投票调查</strong></dt>
-    <script language="javascript" src="{dede:global.cfg_cmsurl/}/data/vote/vote_1.js"></script>
-   </dl>
-  </div>
-  <!-- /vote -->
-  <div style="margin:10 auto">{dede:myad name='indexRtpicAd3'/}</div>
- </div>
- <!-- /pleft -->
-</div>
-<div class="flink w960 center clear">
- <dl class="tbox">
-  <dt> <strong>友情链接</strong>
-	<span class="linklabel">
-		{dede:flinktype type="dedecms"}
-			<a href="#" _for="flink_[field:id/]">[field:typename/]</a> 
-		{/dede:flinktype}
-	</span>
-	<span class="more"> <a href="plus/flink.php">所有链接</a> | <a href="plus/flink_add.php">申请加入</a> </span> </dt>
-  {dede:flinktype type="dedecms"}
-  <dd id="flink_[field:id/]">
-    <ul class="f5">
-		{dede:flink/}
-    </ul>
-  </dd>
-  {/dede:flinktype}
- </dl>
-</div>
-<!-- /flink -->
-<div id="footAD" style="margin:10px auto; width:726px">{dede:myad name='indexfooterAD'/}</div>
-{dede:include filename="footer.htm"/}
-<!-- /footer -->
+
+<body>
+<div class="wapper">
+	
+	<!--header ============================ Start -->
+	<div id="header" class="layout">
+		<div class="header_inner">
+			
+			<h1 id="logo"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/logo2.png" alt="" /></a></h1>
+			
+			<!--header_nav Start-->
+			<div class="header_nav">
+				<span>024 - 25326880</span>
+				<span>024 - 25326881</span>
+				<span>024 - 25326882</span>
+			</div>
+			<!--header_nav End-->
+			
+			<!--search Start-->
+			<div class="normal_search header_search">
+				<form name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+					<input class="input_text act_clear" type="text" value="请输入关键字" />
+					<button class="btn btn_search" type="submit">search</button>
+				</form>
+			</div>
+			<!--search Start-->
+			
+			<!--nav Start-->
+			<div id="nav" class="clear">
+				<ul class="nav_list clearfix">
+					<li class="nav_item nav_item_current"><a class="nav_target" href="/">首页</a></li>
+					<li class="nav_item"><a class="nav_target" href="/about-us/">公司简介</a></li>
+					<li class="nav_item"><a class="nav_target" href="/News/">最新资讯</a></li>
+					<li class="nav_item"><a class="nav_target" href="/Products/">产品展示</a></li>
+					<li class="nav_item"><a class="nav_target" href="/cases/">成功案例</a></li>
+					<li class="nav_item"><a class="nav_target" href="/guestbook/">客户留言</a></li>
+					<li class="nav_item"><a class="nav_target" href="/recruitment/">人才招聘</a></li>
+					<li class="nav_item nav_item_last"><a class="nav_target" href="/contacts/">联系我们</a></li>
+				</ul>
+			</div>
+			<!--nav Start-->
+			
+			
+		</div>
+	</div>
+	<!--header ============================ End -->
+
+
+	<!--content ===========================Start -->
+	<div id="content">
+			
+		<!--promo-->
+		{dede:include filename="promo.htm"/}
+			
+		<!--产品介绍-->
+		<div class="index_cate">
+			<ul class="clearfix">
+				{dede:arclist flag='h' typeid='4' imgwidth='190'  limit='0,4' orderby=pubdate} 
+				<li>
+					<h2><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></h2>
+					
+					<p>[field:image/]
+					[field:description/]</p>
+					<div class="clearfix"><a href="[field:arcurl/]" class="more">更多&gt;&gt;</a></div>
+				</li>
+				 {/dede:arclist}
+			</ul>
+		</div>
+			
+			
+		<div class="column clearfix">
+			
+			<!-- 关于我们 -->
+			<div class="mod about_us">
+				<div class="hd"><h2 class="title">关于我们</h2></div>
+				<div class="bd">
+					<div class="pic"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/1page_img1.jpg" alt="" /></a></div>
+					<div class="info">
+						<em><a href="#">沈阳洪大管道输送设备有限责任公司</a></em><p>成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，机加设备100余台、年生产能力达2000吨以上，产值4000余万元。</p><p>本公司主要生产各种规格的输送灰浆、渣浆管道上的耐磨阀门、灰渣平板闸阀、颗粒泥浆闸阀、套筒式补偿器、液体过滤器等产品，产品广泛适用于矿山、电力、化工、冶金、城建、水利等行业。公司一向注重产品质量，产品先后在鞍钢、首钢、宝钢、五矿集团、中国黄金集团、 国电、中国华能等国家特大型企业和重点工程中得到广泛应用，并取代了进口产品。</p></div>
+					<a class="btn_more" href="/about-us/">更多&gt;&gt;</a>
+				</div>
+			</div>
+			
+			<!-- 我们的产品 -->
+			<div class="mod our_products">
+				<div class="hd"><h2 class="title">我们的产品</h2></div>
+				<div class="bd">
+					<ul class="prolist">
+					{dede:arclist flag='h' typeid='3' imgwidth='105' limit='0,3' orderby=pubdate} 
+                    	<li>
+                        	<div class="pic"><a href="#">[field:image/]</a></div>
+                            <div class="info">
+                            	<h3><a href="[field:arcurl/]">[field:title/]</a></h3>
+                                <p>[field:description/]</p>
+                            </div>
+                        </li> 
+						{/dede:arclist}
+                    </ul>
+                    <a class="btn_more" href="/Products/">更多&gt;&gt;</a>
+				</div>
+			</div>
+						
+		</div>
+	</div>
+		
+		
+	<!--footer-->
+	{dede:include filename="footer.htm"/}
 </body>
 </html>
