@@ -1,0 +1,33 @@
+<div class="index_cate aboutus_cate">
+			<ul class="clearfix">
+				<li>
+					<h2><a href="/Products/">我们提供的</a></h2>
+					<div class="offer">
+					{dede:arclist   typeid='3' imgwidth='190'  limit='0,12' orderby=rand} 
+                    	<p><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></p>
+					{/dede:arclist} 
+                    </div>
+					<div class="clearfix"><a href="/Products/" class="more">更多&gt;&gt;</a></div>
+				</li>
+				<li>
+					<h2><a href="/about-us/">关于我们</a></h2>
+                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img2.jpg" /></div>
+					<p style="text-align:justify;padding:0px 0px 0px 0px;">{dede:global.cfg_aboutus/}</p>
+					<div class="clearfix"><a href="/about-us/" class="more">更多&gt;&gt;</a></div>
+				</li>
+				<li>
+					<h2><a href="/cases/">为什么选择我们</a></h2>
+                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img3.jpg" /></div>
+					<p style="text-align:justify;padding:0px 0px 0px 0px;">{dede:global.cfg_whyus/}</p>
+					<div class="clearfix"><a href="/cases/" class="more">更多&gt;&gt;</a></div>
+				</li>
+				<li>
+					<h2><a href="/cases/">成功案例</a></h2>
+					<div class="offer">
+					{dede:arclist   typeid='4' imgwidth='190'  limit='0,12' orderby=rand} 
+                    	<p><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></p>
+					{/dede:arclist} 
+                    </div>
+				</li>
+			</ul>
+		</div>

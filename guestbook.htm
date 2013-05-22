@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<title>{dede:global.cfg_webname/}</title>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
 <meta name="description" content="{dede:global.cfg_description/}" />
 <meta name="keywords" content="{dede:global.cfg_keywords/}" />
 <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/css/all.css" />
@@ -42,7 +42,7 @@
 				<ul class="nav_list clearfix">
 					<li class="nav_item"><a class="nav_target" href="/">网站首页</a></li>
 					<li class="nav_item"><a class="nav_target" href="/about-us/">公司简介</a></li>
-					<li class="nav_item nav_item_current"><a class="nav_target" href="/News/">最新资讯</a></li>
+					<li class="nav_item"><a class="nav_target" href="/News/">最新资讯</a></li>
 					<li class="nav_item"><a class="nav_target" href="/Products/">产品展示</a>
 					<!--下拉菜单0 -->
 					<ul class="nav_sublist">
@@ -94,7 +94,8 @@
 					<!--下拉菜单1 -->
 					</li>
 					<li class="nav_item"><a class="nav_target" href="/cases/">成功案例</a></li>
-					<li class="nav_item"><a class="nav_target" href="/guestbook/">客户留言</a></li>
+					<li class="nav_item nav_item_current"><a class="nav_target" href="/guestbook/">客户留言</a>
+					</li>
 					<li class="nav_item"><a class="nav_target" href="/recruitment/">人才招聘</a></li>
 					<li class="nav_item nav_item_last"><a class="nav_target" href="/contacts/">联系我们</a></li>
 				</ul>
@@ -107,83 +108,45 @@
 	<!--header ============================ End -->
 
 
-<!--content ===========================Start -->
+	<!--content ===========================Start -->
 	<div id="content">
 			
 		<!--promo-->
 		{dede:include filename="promo.htm"/}
 			
-		<div class="new_wrap clearfix">
-        	
-            <!--fresh_news-->
-            <div class="fresh_news">
-            	<h3>最新新闻</h3>
-                <ul class="">
-				{dede:list pagesize='3' noflag='p'}
-                	<li>
-                    	<h4><a href="[field:arcurl/]" class="title">[field:title/]</a></h4>
-                        <p> [field:description/]...</p>
-                    </li>
-				{/dede:list}
-                	 
-                </ul>
-				 <div class="dede_pages">
-				   <ul class="pagelist">
-					{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
-				   </ul>
-				  </div>
-            </div>
-          
-            <!--latest_review-->
-            <div class="latest_review clearfix">
-            	<h3>图片新闻</h3>
-            	<div class="pic"><img alt="" src="images/3page_img1.jpg" /></div>
-                <div class="info">
-                	<p>是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，机加设备100余台、年生产能力达2000</p>
-                    
-                </div>
-            </div>
+		  <!--column-->
+        <div class="column bestweb clearfix">
 			
-        </div>
-         
-        
-        <!--news_column-->
-        <div class="column news_column clearfix">
-        
-        	<!--最新增加新闻-->
-        	<div class="mod our_products">
-				<div class="hd"><h2 class="title">最新增加新闻</h2></div>
+			<div class="mod about_us">
+				<div class="hd"><h2 class="title">留言板</h2></div>
 				<div class="bd">
-					<ul class="prolist">
-					{dede:arclist flag='p' typeid='2' imgwidth='105'    limit='0,3' orderby=rand}
-                    	<li>
-                        	<div class="pic">[field:image/]</div>
-                            <div class="info">
-                            	<h3><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></h3>
-                                <p> [field:description/]</p>
-                            </div>
-                        </li>
-					 {/dede:arclist} 
-                    </ul> 
+					<div class="details">
+                             
+                             <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"hongdaguandao"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+                    </div>
 				</div>
-			</div>
-            
-            
-            <!--最近新闻-->
-            <div class="recently_news">
-            	<h3 class="title">随机新闻</h3>
-                <ul class="clearfix">
-					{dede:arclist noflag='p' typeid='2' limit='0,20' orderby=pubdate}
-                	<li><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></li> 
-					 {/dede:arclist}
-                </ul>
-                
-            </div>
-        </div>
-        
-        
-        
 
+			</div>
+
+        </div>
+           
+        
+		<!--产品介绍-->
+		{dede:include filename="footer2.htm"/}
+			
 	</div>
 		
 	<!--footer-->

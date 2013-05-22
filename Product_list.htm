@@ -15,7 +15,7 @@
 	<div id="header" class="layout">
 		<div class="header_inner">
 			
-			<h1 id="logo"><a href="#"><img src="images/logo2.png" alt="" /></a></h1>
+			<h1 id="logo"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/logo2.png" alt="" /></a></h1>
 			
 			<!--header_nav Start-->
 			<div class="header_nav">
@@ -28,7 +28,9 @@
 			<!--search Start-->
 			<div class="normal_search header_search">
 				<form name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
-					<input class="input_text act_clear" type="text" value="请输入关键字" />
+					<input class="input_text act_clear" type="text" name="q" value="请输入关键字" />
+					<input type="hidden" name="kwtype" value="0" />
+					<input type="hidden" name="searchtype" value="titlekeyword" />
 					<button class="btn btn_search" type="submit">search</button>
 				</form>
 			</div>
@@ -185,18 +187,30 @@
                 <!--crumb-->
                 <div class="crumb"> {dede:field name='position'/}</div>
                 
-                 <div class="product_details">
-				  <h2>{dede:field.title/}</h2>
-				 	{dede:field.body/}
-				 </div>
-				 <!--上下页 -->
-    			<div class="handle">
-				   <div class="context">
-					<ul>
-					 <li>{dede:prenext get='pre'/}</li>
-					 <li>{dede:prenext get='next'/}</li>
-					</ul>
-				 </div>
+                 <div class="controlbar clearfix">
+                    <!--pagination-->
+                  <div class="dede_pages">
+				   <ul class="pagelist">
+					{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+				   </ul>
+				  </div>
+                </div>
+                <!--product_list-->
+                <div class="product_inner clearfix">
+                    <div class="pro_slide category_pro_slide clearfix">
+                        <ul class="pro_list clearfixlist">
+						{dede:list pagesize='8' }
+                            <li class="pro_item">
+                                <div class="pic"><a class="img120" href="[field:arcurl/]">[field:image/]</a></div>
+                                <div class="info">
+                                    <h3 class="title"><a href="[field:arcurl/]">[field:title/]</a></h3>
+                                </div>
+                            </li>
+                         {/dede:list}
+                             
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 	</div>

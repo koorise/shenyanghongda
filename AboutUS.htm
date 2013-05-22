@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<title>{dede:global.cfg_webname/}</title>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
 <meta name="description" content="{dede:global.cfg_description/}" />
 <meta name="keywords" content="{dede:global.cfg_keywords/}" />
 <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/css/all.css" />
@@ -29,7 +29,9 @@
 			<!--search Start-->
 			<div class="normal_search header_search">
 				<form name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
-					<input class="input_text act_clear" type="text" value="请输入关键字" />
+					<input class="input_text act_clear" type="text" name="q" value="请输入关键字" />
+					<input type="hidden" name="kwtype" value="0" />
+					<input type="hidden" name="searchtype" value="titlekeyword" />
 					<button class="btn btn_search" type="submit">search</button>
 				</form>
 			</div>
@@ -38,10 +40,59 @@
 			<!--nav Start-->
 			<div id="nav" class="clear">
 				<ul class="nav_list clearfix">
-					<li class="nav_item"><a class="nav_target" href="/">网站首页</a></li>
+					<li class="nav_item"><a class="nav_target" href="/">首页</a></li>
 					<li class="nav_item nav_item_current"><a class="nav_target" href="/about-us/">公司简介</a></li>
 					<li class="nav_item"><a class="nav_target" href="/News/">最新资讯</a></li>
-					<li class="nav_item"><a class="nav_target" href="/Products/">产品展示</a></li>
+					<li class="nav_item"><a class="nav_target" href="/Products/">产品展示</a>
+					<!--下拉菜单0 -->
+					<ul class="nav_sublist">
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/famen/">阀门</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/naimofamen/">耐磨阀门</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/wuliaofa/">物料阀</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/jiangtiguandaozidongpaiqifa/">浆体管道自动排气阀</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/fengfa/">风阀</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/fengjilei/">风机类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/zhouliufengji/">轴流风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/lixinfengji/">离心风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/xiangtifengji/">箱体风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/sheliufengji/">射流风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/xuanwofengji/">旋涡风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/luocigufengji/">罗茨鼓风机</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/boligangfengji/">玻璃钢风机</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/zhuanyongfengji/">专用风机</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/yaliguandaoyuanjianlei/">压力管道元件类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yaliguandaoyuanjianlei/taotongshibuchangq/">套筒式补偿器</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yaliguandaoyuanjianlei/taotongshibuchangq/">浆体管道压力表传导器</a></li>
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/guolvchuwulei/">过滤除污类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/guolvchuwulei/yetiguolvqi/">液体过滤器</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/guolvchuwulei/xuanliuchuwuqi/">旋流除污器</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem nav_subitem_last">
+									<span class="nav_subtarget"><a href="/Products/yedongfamenkongzhixitong/">液动阀门控制系统</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yedongfamenkongzhixitong/diancihuanxiangy/">电磁换向液动阀门控制系统</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yedongfamenkongzhixitong/shoudonghuanxian/">手动换向液动阀门控制系统</a></li> 
+									</ul>
+								</li> 
+								 
+							</ul>
+					<!--下拉菜单1 -->
+					</li>
 					<li class="nav_item"><a class="nav_target" href="/cases/">成功案例</a></li>
 					<li class="nav_item"><a class="nav_target" href="/guestbook/">客户留言</a></li>
 					<li class="nav_item"><a class="nav_target" href="/recruitment/">人才招聘</a></li>
@@ -68,14 +119,10 @@
 			<div class="mod about_us">
 				<div class="hd"><h2 class="title">公司简介</h2></div>
 				<div class="bd">
-					<div class="pic"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/2page_img1.jpg" alt="" /></a></div>
-					<div class="info">
-						<div class="details">
-                            <h3><a href="#">沈阳洪大管道输送设备有限责任公司</a></h3>
+					<div class="details">
+                            <center><h3 style="font-size:16px; font-weight:bold;">沈阳洪大管道输送设备有限责任公司</h3></center>
                             <p style='color:whitesmoke;'>{dede:field.content/}</p>
-                        </div>
-                     	 
-                     </div>
+                    </div>
 				</div>
 
 			</div>
@@ -84,38 +131,8 @@
            
         
 		<!--产品介绍-->
-		<div class="index_cate aboutus_cate">
-			<ul class="clearfix">
-				<li>
-					<h2><a href="#">我们提供的</a></h2>
-					<div class="offer">
-					{dede:arclist   typeid='3' imgwidth='190'  limit='0,12' orderby=rand} 
-                    	<p><a href="[field:arcurl/]">[field:title function='cn_substr(@me,18)/]</a></p>
-					{/dede:arclist} 
-                    </div>
-					<div class="clearfix"><a href="/Products/" class="more">更多&gt;&gt;</a></div>
-				</li>
-				<li>
-					<h2><a href="/about-us/">关于我们</a></h2>
-                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img2.jpg" /></div>
-					<p><em>沈阳洪大管道输送设备有限责任公司</em>成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，</p>
-					<div class="clearfix"><a href="/about-us/" class="more">更多&gt;&gt;</a></div>
-				</li>
-				<li>
-					<h2><a href="/cases/">为什么选择我们</a></h2>
-                    <div class="pic"><img alt="" src="{dede:global.cfg_templets_skin/}/images/2page_img3.jpg" /></div>
-					<p><em>沈阳洪大管道输送设备</em>有限责任公司成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，</p>
-					<div class="clearfix"><a href="/cases/" class="more">更多&gt;&gt;</a></div>
-				</li>
-				<li>
-					<h2><a href="#">我们的任务</a></h2>
-					<div class="mission">
-                    	<h3>沈阳洪大管道输送设备成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。</h3>成立于1997年，是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000是集设计、制造、销售为一体的以管道输送设备为主导产品的专业制造公司。公司占地面积10000平方米，建筑面积5000平方米。现有员工100余名，工程技术、管理人员30余名。其中，中、高级职称20余名。拥有机加、焊接、检验设备，固定资产3000余万，</div>
-					<div class="clearfix"><a href="#" class="more">更多&gt;&gt;</a></div>
-				</li>
-			</ul>
-		</div>
-			
+		
+			{dede:include filename="footer2.htm"/}
 	</div>
 		
 	<!--footer-->
