@@ -32,8 +32,8 @@ textarea { overflow:auto; resize:none;}
 .layout{ width:980px; margin:0 auto;}
 
 /* Clearfix */
-.clearfix:after, .layout:after, .clearfixlist li:after,.forms li:after, .header_inner:after, .content_inner:after, .footer_inner:after ,.news_main .list_item:after ,.index_contact_us li:after ,.our_products li:after{ content:"\0020"; display:block; clear:both; height:0; font-size:0;}
-.clearfix, .layout, .clearfixlist li,.forms li,.header_inner, .content_inner, .footer_inner ,.news_main .list_item ,.index_contact_us li,.our_products li{ zoom:1;}
+.clearfix:after, .layout:after, .clearfixlist li:after,.forms li:after, .header_inner:after, .content_inner:after, .footer_inner:after ,.news_main .list_item:after ,.index_contact_us li:after ,.our_products li:after ,.reviewlist li:after{ content:"\0020"; display:block; clear:both; height:0; font-size:0;}
+.clearfix, .layout, .clearfixlist li,.forms li,.header_inner, .content_inner, .footer_inner ,.news_main .list_item ,.index_contact_us li,.our_products li ,.reviewlist li{ zoom:1;}
 .clear{ clear:both; display:block;}
 
 /*form reset*/
@@ -177,6 +177,17 @@ textarea { overflow:auto; resize:none;}
 
 	.promo .info{ position:absolute; left:0; top:95px; padding:20px 50px 0 20px; width:390px; height:160px; background:url(../images/banner_slogan_bg.png) no-repeat 0 0; line-height:34px; color:#fff; font-size:22px; overflow:hidden; font-family:"微软雅黑";}
 
+
+/*banner*/
+.bannerBox{ width:966px; height:373px; position:relative; border:7px solid #3D3D3D; overflow:hidden;}
+.bannerBox li{width:373px; overflow:hidden;} 
+.bannerBox li img{ position:absolute; left:0; top:0;}
+.bannerBox .slide_triggers {position:absolute; bottom:20px; left:20px; height:13px; padding:0;}
+.bannerBox .slide_triggers li {float:left; margin:0 2px; cursor:pointer; width:17px; height:13px; text-align:center; background:url(../images/pagination2.png) no-repeat 0 0; text-indent:-9999em; overflow:hidden;}
+.bannerBox .slide_triggers li.hover { background:url(../images/pagination1.png) no-repeat 0 0;}
+
+.bannerBox li a{width:929px; height:320px; overflow:hidden;}
+.bannerBox li .bannerTxt{ position:absolute; left:0; top:90px; padding:20px 50px 0 20px; width:390px; height:160px; background:url(../images/banner_slogan_bg.png) no-repeat 0 0; line-height:34px; color:#fff; font-size:22px; overflow:hidden; font-family:"微软雅黑";}
 
 
 
@@ -421,6 +432,7 @@ textarea { overflow:auto; resize:none;}
 
 /*latest_review*/
 .latest_review{ float:right; margin-right:10px; width:450px; line-height:20px;}
+.reviewlist li{ padding-bottom:10px;}
 .latest_review .pic{width:151px; height:147px; overflow:hidden; float:left;}
 .latest_review .info{ width:265px; float:left; margin-left:25px;}
 .latest_review .info p{ height:100px; overflow:hidden;}
@@ -552,12 +564,3 @@ textarea { overflow:auto; resize:none;}
 .resultlist ul li span a{
   color:#008400;
  }
-
-
-
-
-
-
-
-
-

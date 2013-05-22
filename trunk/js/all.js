@@ -134,6 +134,22 @@ $(document).ready(function(){
 	
 /* ============================== 首页 脚本 ============================== Begin */
 
+	$("#banner .bannerImg li").addClass("bigimg");
+	$("#banner .bigimg").banner_thaw({
+		thumbObj:"#banner .slide_triggers li",
+		thumbNowClass:"hover",
+		changeTime:8000
+	});
+
+	//banner
+	$("#subBanner .bannerImg li").addClass("bigimg");
+	$("#subBanner .bigimg").banner_thaw({
+		thumbObj:"#subBanner .slide_triggers li",
+		thumbNowClass:"hover",
+		changeTime:8000
+	});
+
+
 	/* ---------- 首页大图轮转 promo ---------- */
 	$("#JS_promoContent img").promo({
 		thumbObj:"#JS_promoTriggers li",
