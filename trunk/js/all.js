@@ -55,26 +55,25 @@ $(document).ready(function(){
 	
 	/*主导航 二级菜单 hover 后效果*/
 	$(".nav_sublist").each(function(index){
-		switch(index)
-		{
-			case 0:$(this).css("width","450px"); break;
-			case 1:$(this).css("width","648px"); break;
-		}
+	//	switch(index)
+//		{
+//			case 0:$(this).css("width","450px"); break;
+//			case 1:$(this).css("width","648px"); break;
+//		}
 		
 			
 		})
 	$("#nav .nav_item").each(function(){$(this).hover(function(){
-		 		$(this).addClass("hover").children(".nav_sublist").show(500);
-				
+		 $(this).addClass("hover");		
 	},function(){
-		$(this).removeClass("hover").children(".nav_sublist").hide(100);		
+		$(this).removeClass("hover");		
 	});})
 	
 	/*主导航 三级菜单 hover 后效果*/
 	$("#nav .nav_subitem").hover(function(){
-		 $(this).addClass("nav_subitem_hover").children(".nav_extralist").show(500);
+		 $(this).addClass("nav_subitem_hover");
 	},function(){
-		$(this).removeClass("nav_subitem_hover").children(".nav_extralist").hide(0);		
+		$(this).removeClass("nav_subitem_hover");		
 	});
 	
 						
@@ -159,6 +158,11 @@ $(document).ready(function(){
 	});
 
 
+	$("#JS_promo").markSlider({
+		progressNavHover:true,
+		speed:3000,
+		pause:4000
+	});
 
 	
 	

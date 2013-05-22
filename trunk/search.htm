@@ -1,56 +1,140 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <title>搜索页_{dede:global.cfg_webname/}</title>
-<meta name="keywords" content="{dede:field name='keywords'/}" />
-<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
-<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/css/all.css" />
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.js"></script>
 </head>
-<body class="articlelist" style="min-width:1000px">
-<div class="header_top">  
-    <div class="center">  
-     <span id="time" class="time">织梦CMS - 轻松建站从此开始！</span>
-     <div class="toplinks"><a href="{dede:global.cfg_cmsurl/}/plus/heightsearch.php" target="_blank">高级搜索</a>|<a href="{dede:global.cfg_cmsurl/}/data/sitemap.html" target="_blank">网站地图</a>|<a href="{dede:global.cfg_cmsurl/}tags.php">TAG标签</a><a href="{dede:global.cfg_dataurl/}/rssmap.html" class="rss">RSS订阅</a><span>[<a href="" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{dede:global.cfg_basehost/}');">设为首页</a>] [<a href="javascript:window.external.AddFavorite('{dede:global.cfg_basehost/}','{dede:global.cfg_webname/}')">加入收藏</a>]</span>   <a href="{dede:global.cfg_cmsurl/}">返回首页</a></div>
-    </div> 
-</div>
-<div class="search_header">
-   <h1><a href="{dede:global.cfg_basehost/}"><img src="{dede:global.cfg_templets_skin/}/images/logo.gif" height="54" width="216" alt="{dede:global.cfg_webname/}"/></a> </h1>   
-   <div class="search_box">
-        <form>
-		    <input name="q" type="text" id="search-keyword" value="{dede:global name='keyword' function='RemoveXSS(@me)'/}" onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
-			<select name="searchtype" id="search-option">
-               <option value="title" selected='1'>检索标题</option>
-               <option value="titlekeyword">智能模糊</option>
-            </select>
-			<button type="submit" class="search-submit">搜索</button>
-			<a href="heightsearch.php">高级搜索</a>
-		</form>
-   </div>   
-   <div id="searchTopBanner" style="float:right; margin:10px"><script src='{dede:global.cfg_cmsurl/}/plus/ad_js.php?aid=18' language='javascript'></script> </div>
-</div><!-- //top -->
-<!-- /header -->
-<div class="resultbar">搜索 <strong class="fc_03c">{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong> 的结果 </div>
-<div class="result_content">	
-	<div class="sidebar">
-        <h2>相关搜索</h2>
-        <ul>
-            <li>{dede:likewords num='8'/}</li>
-	    </ul>
-		<div class="sidebar_banner"><script src='{dede:global.cfg_cmsurl/}/plus/ad_js.php?aid=16' language='javascript'></script></div>
-    </div>
+
+<body>
+<div class="wapper">
+	
+	<!--header ============================ Start -->
+	<div id="header" class="layout">
+		<div class="header_inner">
+			
+			<h1 id="logo"><a href="#"><img src="{dede:global.cfg_templets_skin/}/images/logo2.png" alt="" /></a></h1>
+			
+			<!--header_nav Start-->
+			<div class="header_nav">
+				<span>024 - 25326880</span>
+				<span>024 - 25326881</span>
+				<span>024 - 25326882</span>
+			</div>
+			<!--header_nav End-->
+			
+			<!--search Start-->
+			<div class="normal_search header_search">
+				<form name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+					<input class="input_text act_clear" type="text" name="q" value="请输入关键字" />
+					<input type="hidden" name="kwtype" value="0" />
+					<input type="hidden" name="searchtype" value="titlekeyword" />
+					<button class="btn btn_search" type="submit">search</button>
+				</form>
+			</div>
+			<!--search Start-->
+			
+			<!--nav Start-->
+			<div id="nav" class="clear">
+			<!--导航菜单 0 -->
+				<ul class="nav_list clearfix">
+					<li class="nav_item"><a class="nav_target" href="/">首页</a></li>
+					<li class="nav_item"><a class="nav_target" href="/about-us/">公司简介</a></li>
+					<li class="nav_item"><a class="nav_target" href="/News/">最新资讯</a></li>
+					<li class="nav_item "><a class="nav_target" href="/Products/">产品展示</a>
+					<!--下拉菜单0 -->
+					<ul class="nav_sublist">
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/famen/">阀门</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/naimofamen/">耐磨阀门</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/wuliaofa/">物料阀</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/jiangtiguandaozidongpaiqifa/">浆体管道自动排气阀</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/famen/fengfa/">风阀</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/fengjilei/">风机类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/zhouliufengji/">轴流风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/lixinfengji/">离心风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/xiangtifengji/">箱体风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/sheliufengji/">射流风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/xuanwofengji/">旋涡风机</a></li>
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/luocigufengji/">罗茨鼓风机</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/boligangfengji/">玻璃钢风机</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/fengjilei/zhuanyongfengji/">专用风机</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/yaliguandaoyuanjianlei/">压力管道元件类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yaliguandaoyuanjianlei/taotongshibuchangq/">套筒式补偿器</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yaliguandaoyuanjianlei/taotongshibuchangq/">浆体管道压力表传导器</a></li>
+									</ul>
+								</li> 
+								<li class="nav_subitem">
+									<span class="nav_subtarget"><a href="/Products/guolvchuwulei/">过滤除污类</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/guolvchuwulei/yetiguolvqi/">液体过滤器</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/guolvchuwulei/xuanliuchuwuqi/">旋流除污器</a></li> 
+									</ul>
+								</li> 
+								<li class="nav_subitem nav_subitem_last">
+									<span class="nav_subtarget"><a href="/Products/yedongfamenkongzhixitong/">液动阀门控制系统</a></span>
+									<ul class="nav_extralist clearfix">
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yedongfamenkongzhixitong/diancihuanxiangy/">电磁换向液动阀门控制系统</a></li> 
+										<li class="nav_extraitem"><a class="nav_extratarget" href="/Products/yedongfamenkongzhixitong/shoudonghuanxian/">手动换向液动阀门控制系统</a></li> 
+									</ul>
+								</li> 
+								 
+							</ul>
+					<!--下拉菜单1 -->
+					</li>
+					<li class="nav_item"><a class="nav_target" href="/cases/">成功案例</a></li>
+					<li class="nav_item"><a class="nav_target" href="/guestbook/">客户留言</a></li>
+					<li class="nav_item"><a class="nav_target" href="/recruitment/">人才招聘</a></li>
+					<li class="nav_item nav_item_last"><a class="nav_target" href="/contacts/">联系我们</a></li>
+				</ul>
+			<!--导航菜单1 -->
+			</div>
+			<!--nav Start-->
+			
+			
+		</div>
+	</div>
+	<!--header ============================ End -->
+
+
+	<!--content ===========================Start -->
+	<div id="content">
+			
+		<!--promo-->
+		{dede:include filename="promo.htm"/}
+			
+		  <!--column-->
+        <div class="column bestweb clearfix">
+			
+			<div class="mod about_us">
+				<div class="hd"> 搜索 <strong class="fc_03c">{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong> 的结果 </div></div>
+				<div class="result_content">	
+				<div class="sidebar">
+					<h2>相关搜索</h2>
+					<ul>
+						<li>{dede:likewords num='8'/}</li>
+					</ul>
+					
+				</div>
 		<div class="resultlist">
 			<ul>
              {dede:list perpage='20'}
 				<li>      				
-					<h3><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h3>
+					<h3><a href="[field:arcurl/]" class="title">[field:title/]</a></h3>
                     <p>[field:description/]...</p>
-					<span>
-					    <a href="[field:arcurl/]">[field:global.cfg_basehost/][field:arcurl/]</a>
-						<small>分类：</small><a href="[field:typeurl/]" target="_blank">[field:typename/]</a>
-						<small>点击：</small>[field:click/]
-						<small>日期：</small>[field:stime/]
-					</span>
+					
 				</li>
 			{/dede:list}
 			</ul>
@@ -61,19 +145,17 @@
 		</div><!-- /pages -->
 		</div><!-- /listbox -->
 </div>
-<div class="footer center mt1 clear">
-	<!-- 
-		为了支持织梦团队的发展,请您保留织梦内容管理系统的链接信息.
-		我们对支持织梦团队发展的朋友表示真心的感谢!织梦因您更精彩!
-	-->
-    <div class="footer_left"></div>
-    <div class="footer_body">
-	<p class="powered">    
-		Powered by <a href="http://www.dedecms.com" title="织梦内容管理系统(DedeCms)--国内最专业的PHP网站管理系统，轻松建站的首选利器。" target="_blank"><strong>DedeCMS{dede:global.cfg_version/}</strong></a> &copy; 2004-2011 <a href="http://www.desdev.cn/" target="_blank">DesDev</a> Inc.<br /><div class="copyright">{dede:global.cfg_powerby/}&nbsp;&nbsp;{dede:global.cfg_beian/}</div></p>        
-<!-- /powered -->
-   </div>
-   <div class="footer_right"></div>
-</div>
-<!-- /footer -->
+			</div>
+				 
+		</div>
+           
+        
+		<!--产品介绍-->
+		{dede:include filename="footer2.htm"/}
+			
+	</div>
+		
+	<!--footer-->
+	{dede:include filename="footer.htm"/}
 </body>
 </html>
